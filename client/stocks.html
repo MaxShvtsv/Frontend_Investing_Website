@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Max Invest - Акції</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="index.js"></script>
+    </head>
+
+    <body>
+        <main>
+            <section class="hero">
+                <div style="position: absolute; right: 60%; top:0.5%;">
+                    <ul id="logged_in_buttons">
+                        <li><button onclick="to_news()">Новини</button></li>
+                        <li><button onclick="to_indexes()">Індекси</button></li>
+                        <li><button onclick="to_cryptocurrencies()">Криптовалюти</button></li>
+                    </ul>
+                </div>
+    
+                <h1>
+                    Max Invest
+                    <p>Платформа фінансових ринків</p>
+                </h1>
+    
+                <div>
+                    <ul id="logged_in">
+                        <li>
+                            <h3 id="logged_in_name"></h3>
+                        </li>
+                        <li>
+                            <h3 id="logged_in_lastname"></h3>
+                        </li>
+                        <li><button onclick="log_out()" id="logout_button" class="cta"
+                                style="visibility: hidden;">Вийти</button></li>
+                    </ul>
+                    <ul>
+                        <li><a href="login.html" id="login_button"
+                               class="cta" style="margin-right: 1%;">Вхід</a></li>
+                        <li><a href="register.html" id="register_button" class="cta">Реєстрація</a></li>
+                    </ul>
+                </div>
+            </section>
+    
+            <section class="data">
+                <table id="stocks_table">
+                    <tr>
+                        <td>Loading...</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+    </body>
+
+    <footer id='footer'>
+        <p>&copy; 2023 | Всі права захищені | max.shvtsv@gmail.com</p>
+    </footer>
+</html>

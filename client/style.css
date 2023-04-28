@@ -1,0 +1,224 @@
+/* Common Styles */
+body {
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    color: #FBFF00;
+    background-color: #70706A;
+}
+
+h1, h2 {
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Main Section */
+.hero {
+    background-color: #4B4B45;
+    color: #FBFF00;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.hero ul {
+    visibility: hidden;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 3rem;
+    position: absolute;
+    right: -20%;
+    top: 13%;
+}
+
+.hero div {
+    position: absolute;
+    right: 5%;
+    top: -2%;
+}
+
+.hero li {
+    margin: 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.cta {
+    background-color: #A49D9D;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    color: #FBFF00;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #FBFF00;
+    color: #A49D9D;
+}
+
+button {
+    background-color: #A49D9D;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    color: #FBFF00;
+    display: inline-block;
+    font-size: 1.3rem;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FBFF00;
+    color: #A49D9D;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #FBFF00;
+    padding: 1rem 1rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Services on main page */
+.services {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.services ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.services li {
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+.services button {
+    padding: 2rem 3rem;
+}
+
+/* Log-in page styles */
+.login {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.login ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.login li {
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+.login a {
+    background-color: #A49D9D;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    color: #FBFF00;
+    display: inline-block;
+    font-size: 1.3rem;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login a:hover {
+    background-color: #FBFF00;
+    color: #A49D9D;
+}
+
+.login input {
+    padding: 10px;
+}
+
+/* Data and table styles(for services pages) */
+.data {
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.data a {
+    color: #FBFF00;
+    text-decoration: none;
+}
+
+.data a:visited {
+    color: #FBFF00;
+    text-decoration: none;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for cryptocurrency page */
+.cryptocurrencty_data {
+    position: absolute;
+    left: 5%;
+    padding-bottom: 5%;
+}
+
+.cryptocurrencty_data ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cryptocurrencty_data li {
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+.cryptocurrencty_data input {
+    padding: 10px;
+}
