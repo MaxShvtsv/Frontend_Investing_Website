@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     current_page = window.location.pathname.split("/").pop();
 
     if (
-        current_page == 'main.html' ||
+        current_page == 'index.html' ||
         current_page == 'news.html' ||
         current_page == 'indexes.html' ||
         current_page == 'stocks.html' ||
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             // When logged in
             document.getElementById('logged_in').style.visibility = 'visible';
             document.getElementById('logout_button').style.visibility = 'visible';
-            if (current_page != 'main.html'){
+            if (current_page != 'index.html'){
                 document.getElementById('logged_in_buttons').style.visibility = 'visible';
             }
             
@@ -207,7 +207,7 @@ async function log_in() {
         console.log(user_firstname);
         console.log(user_lastname);
 
-        location.href = 'main.html';
+        location.href = 'index.html';
 
         localStorage.setItem('current_user_firstname', user_firstname);
         localStorage.setItem('current_user_lastname', user_lastname);
@@ -284,7 +284,7 @@ function add_user() {
         localStorage.setItem('current_user_firstname', user_firstname_text);
         localStorage.setItem('current_user_lastname', user_lastname_text);
 
-        location.href = 'main.html';
+        location.href = 'index.html';
     }
 }
 
@@ -293,7 +293,7 @@ function log_out() {
     localStorage.removeItem('current_user_firstname');
     localStorage.removeItem('current_user_lastname');
 
-    location.href = 'main.html';
+    location.href = 'index.html';
 }
 
 // If user tries to get into services pages, so give him an alert message.
