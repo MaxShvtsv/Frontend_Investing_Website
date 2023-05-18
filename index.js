@@ -1,3 +1,5 @@
+const server_url = 'https://investing-website-xkpw.onrender.com';
+
 // Actions when pages are loaded.
 document.addEventListener('DOMContentLoaded', async function () {
     current_page = window.location.pathname.split("/").pop();
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Load services data on loading page
     if (current_page == 'news.html') {
-        let news_data = await fetch('http://localhost:5000/upload_news')
+        let news_data = await fetch(server_url + '/upload_news')
             .then(response => response.json());
 
         let news_titles = news_data['news_titles'];
@@ -49,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         load_news_table_data(news_titles, news_titles_urls);
     } else if (current_page == 'indexes.html') {
-        let indexes_data = await fetch('http://localhost:5000/upload_indexes')
+        let indexes_data = await fetch(server_url + '/upload_indexes')
             .then(response => response.json())
             .then(data => data['data']);
 
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         load_indexes_table_data(indexes_data);
     } else if (current_page == 'stocks.html') {
-        let stocks_data = await fetch('http://localhost:5000/upload_stocks')
+        let stocks_data = await fetch(server_url + '/upload_stocks')
             .then(response => response.json())
             .then(data => data['data']);
 
@@ -123,7 +125,7 @@ function load_stocks_table_data(stocks_data) {
 async function load_cryptocurrency_data() {
     let symbol = document.getElementById('input_cryptocurrency').value;
 
-    let coin_data = await fetch('http://localhost:5000/upload_cryptocurrency', {
+    let coin_data = await fetch(server_url + '/upload_cryptocurrency', {
         method: 'POST',
         body: JSON.stringify({ sym: symbol }),
         headers: { 'Content-Type': 'application/json' }
@@ -188,7 +190,7 @@ async function log_in() {
             type: 'login'
         }
 
-        let full_user_info = await fetch('http://localhost:5000/get_user', {
+        let full_user_info = await fetch(server_url + '/get_user', {
             method: 'POST',
             body: JSON.stringify(user_info),
             headers: { 'Content-Type': 'application/json' }
@@ -226,7 +228,7 @@ async function recover_password(){
             type: 'recover'
         }
 
-        let full_user_info = await fetch('http://localhost:5000/get_user', {
+        let full_user_info = await fetch(server_url + '/get_user', {
             method: 'POST',
             body: JSON.stringify(user_info),
             headers: { 'Content-Type': 'application/json' }
@@ -271,7 +273,7 @@ function add_user() {
             user_password: user_password_1_text
         }
 
-        fetch('http://localhost:5000/add_user', {
+        fetch(server_url + '/add_user', {
             method: 'POST',
             body: JSON.stringify(user_info),
             headers: { 'Content-Type': 'application/json' }
