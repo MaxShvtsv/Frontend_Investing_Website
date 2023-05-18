@@ -275,3 +275,5 @@ app.listen(5000, (err) => {
     }
 });
 console.log('Server is running at port 5000...');
+
+const connection = mysql.createConnection(database_access);

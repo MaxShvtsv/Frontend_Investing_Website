@@ -1,4 +1,5 @@
-const server_url = 'https://investing-website-xkpw.onrender.com';
+// const server_url = 'https://investing-website-xkpw.onrender.com';
+const server_url = 'http://localhost:5000'
 
 // Actions when pages are loaded.
 document.addEventListener('DOMContentLoaded', async function () {
