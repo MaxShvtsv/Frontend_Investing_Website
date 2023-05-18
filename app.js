@@ -6,11 +6,6 @@ const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
 
-const app = express();
-
-app.use(cors())
-app.use(body_parser.json())
-
 // Database connection data
 const database_access = {
     host: "localhost",
@@ -27,6 +22,11 @@ const database_access = {
 //     user_email VARCHAR(256) NOT NULL,
 //     user_password VARCHAR(256) NOT NULL
 // )
+
+const app = express();
+
+app.use(cors())
+app.use(body_parser.json())
 
 // Upload news data on news.html
 app.get('/upload_news', async (request, response) => {
@@ -218,13 +218,13 @@ app.post('/get_user', (request, response) => {
 
     if (user_info['type'] === 'login'){
         query = "SELECT * FROM users " +
-                "WHERE user_email = '" + user_info['user_email'] +
-                "' AND user_password = " + user_info['user_password']
+                "WHERE user_email = '" + user_info['user_email'].trim() +
+                "' AND user_password = " + user_info['user_password'].trim()
     } else if (user_info['type'] === 'recover'){
         query = "SELECT * FROM users " +
-                "WHERE user_email = '" + user_info['user_email'] +
-                "' AND user_firstname = '" + user_info['user_firstname'] +
-                "' AND user_lastname = '" + user_info['user_lastname'] + '\''
+                "WHERE user_email = '" + user_info['user_email'].trim() +
+                "' AND user_firstname = '" + user_info['user_firstname'].trim() +
+                "' AND user_lastname = '" + user_info['user_lastname'].trim() + '\''
     }
 
     connection.query(query, (err, result, field) => {
@@ -254,8 +254,8 @@ app.post('/add_user', (request, response) => {
     });
 
     let query = "INSERT INTO users(user_firstname, user_lastname, user_email, user_password) " +
-        "VALUES ('" + user_info['user_firstname'] + "', '" + user_info['user_lastname'] + " ', '" +
-        user_info['user_email'] + "', '" + user_info['user_password'] + "');";
+        "VALUES ('" + user_info['user_firstname'].trim() + "', '" + user_info['user_lastname'].trim() + " ', '" +
+        user_info['user_email'].trim() + "', '" + user_info['user_password'].trim() + "');";
 
     connection.query(query, (err, result, field) => {
         console.log(err);
@@ -273,6 +273,5 @@ app.listen(5000, (err) => {
     if (err) {
         return console.log(err);
     }
-
-    console.log('Server is running at port 5000...');
 });
+console.log('Server is running at port 5000...');

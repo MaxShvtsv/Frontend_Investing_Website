@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Max Invest - Новини</title>
+        <title>Max Invest - Криптовалюти</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="../server/index.js"></script>
+        <script src="index.js"></script>
     </head>
 
     <body>
@@ -11,9 +11,9 @@
             <section class="hero">
                 <div style="position: absolute; right: 60%; top:0.5%;">
                     <ul id="logged_in_buttons">
+                        <li><button onclick="to_news()">Новини</button></li>
                         <li><button onclick="to_indexes()">Індекси</button></li>
                         <li><button onclick="to_stocks()">Акції</button></li>
-                        <li><button onclick="to_cryptocurrencies()">Криптовалюти</button></li>
                     </ul>
                 </div>
     
@@ -34,22 +34,33 @@
                                 style="visibility: hidden;">Вийти</button></li>
                     </ul>
                     <ul>
-                        <li><a href="login.html" id="login_button" class="cta" style="margin-right: 1%;">Вхід</a></li>
+                        <li><a href="login.html" id="login_button"
+                               class="cta" style="margin-right: 1%;">Вхід</a></li>
                         <li><a href="register.html" id="register_button" class="cta">Реєстрація</a></li>
                     </ul>
                 </div>
             </section>
     
-            <section class="data">
-                <table id="news_table">
-                    <tr>
-                        <td>Loading...</td>
-                    </tr>
-                </table>
+            <section class="cryptocurrencty_data">
+                <ul id="cryptocurrency_ul">
+                    <li>
+                        Введіть назву криптовалюти:
+                    </li>
+                    <li>
+                        <input type="text" id="input_cryptocurrency" placeholder="Криптовалюта..." size="25">
+                        <button onclick="load_cryptocurrency_data()">Пошук</button>
+                    </li>
+                    <li>
+                        <table class="cryptocurrency_table" id="cryptocurrency_table">
+
+                        </table>
+                        <div id="categories"></div>
+                    </li>
+                </ul>
             </section>
         </main>
     </body>
-
+    
     <footer id='footer'>
         <p>&copy; 2023 | Всі права захищені | max.shvtsv@gmail.com</p>
     </footer>

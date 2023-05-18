@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     current_page = window.location.pathname.split("/").pop();
 
     if (
-        current_page == 'index.html' ||
+        current_page == 'main.html' ||
         current_page == 'news.html' ||
         current_page == 'indexes.html' ||
         current_page == 'stocks.html' ||
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             // When logged in
             document.getElementById('logged_in').style.visibility = 'visible';
             document.getElementById('logout_button').style.visibility = 'visible';
-            if (current_page != 'index.html'){
+            if (current_page != 'main.html'){
                 document.getElementById('logged_in_buttons').style.visibility = 'visible';
             }
             
@@ -133,10 +133,6 @@ async function load_cryptocurrency_data() {
 
     const table = document.getElementById("cryptocurrency_table");
 
-    if (document.getElementById('loading_cell')) {
-        table.deleteRow(0);
-    }
-
     var row_count = table.rows.length;
 
     if (coin_data == 0) {
@@ -207,7 +203,7 @@ async function log_in() {
         console.log(user_firstname);
         console.log(user_lastname);
 
-        location.href = 'index.html';
+        location.href = 'main.html';
 
         localStorage.setItem('current_user_firstname', user_firstname);
         localStorage.setItem('current_user_lastname', user_lastname);
@@ -284,7 +280,7 @@ function add_user() {
         localStorage.setItem('current_user_firstname', user_firstname_text);
         localStorage.setItem('current_user_lastname', user_lastname_text);
 
-        location.href = 'index.html';
+        location.href = 'main.html';
     }
 }
 
@@ -293,7 +289,7 @@ function log_out() {
     localStorage.removeItem('current_user_firstname');
     localStorage.removeItem('current_user_lastname');
 
-    location.href = 'index.html';
+    location.href = 'main.html';
 }
 
 // If user tries to get into services pages, so give him an alert message.
