@@ -11,6 +11,6 @@
         "express": "^4.18.2",
         "mysql": "^2.18.1",
         "nodemon": "^2.0.22",
-        "puppeteer": "^19.11.0"
+        "puppeteer": "^19.11.1"
     }
 }
