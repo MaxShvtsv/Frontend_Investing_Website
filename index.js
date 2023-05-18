@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', async function () {
     current_page = window.location.pathname.split("/").pop();
 
-    if (
+    if (current_page == '' ||
         current_page == 'index.html' ||
         current_page == 'news.html' ||
         current_page == 'indexes.html' ||
